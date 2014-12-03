@@ -56,7 +56,7 @@
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
 
-\setmathfont{XITS Math}
+\setmathfont{Helvetica Neue Light}
 
 %%%%%%%%%%
 % Header %
@@ -70,7 +70,7 @@
   \color{white}%
 }
 
-\newcommand{\header}[3]{%
+\newcommand{\header}[4]{%
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
@@ -79,7 +79,7 @@
     };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
-      \thinfont #3%
+      {\bodyfont #3}{\bodyfont #4}%
     };
   \end{tikzpicture}
   \vspace{2.5cm}
